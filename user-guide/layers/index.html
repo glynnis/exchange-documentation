@@ -143,10 +143,90 @@
                 <div class="col-md-9" role="main">
 
 <h2 id="working-with-layers">Working with Layers</h2>
-<h3 id="uploading-a-layer">Uploading a layer</h3>
+<p>Exchange allows you to upload layers. The following are the supported <strong>Vector</strong> formats:</p>
 <ul>
-<li>TODO</li>
+<li>ESRI Shapefile</li>
+<li>CSV (Comma Separated Value)</li>
+<li>Google Earth KML</li>
+<li>GeoJSON</li>
 </ul>
+<p>The following are the supported <strong>Raster</strong> formats:</p>
+<ul>
+<li>GeoTIFF</li>
+<li>ERDAS Imagine</li>
+<li>JPEG2000</li>
+<li>NITF (National Imagery Transmission Format)</li>
+<li>CIB (Controlled Image Base)<ul>
+<li>1 Meter</li>
+<li>5 Meter</li>
+<li>10 Meter</li>
+</ul>
+</li>
+<li>CADRG (Compressed Arc Digitized Raster Graphic)<ul>
+<li>GNC (Global Navigation Chart)</li>
+<li>JNC (Jet Navigation Chart)</li>
+<li>ONC (Operational Navigation Chart)</li>
+<li>TPC (Tactical Pilotage Chart)</li>
+<li>JOG (Joint Operations Graphic)</li>
+<li>TLM100 (Topographic Line Map 100K)</li>
+<li>TLM50 (Topographic Line Map 50K)</li>
+</ul>
+</li>
+</ul>
+<p>All of the following filetypes can be uploaded by being placed in a <strong>Zip Archive (.zip)</strong>.</p>
+<p>Once the layers are uploaded, they will be available to other users in Exchange.</p>
+<h3 id="uploading-a-layer">Uploading a layer</h3>
+<ol>
+<li>
+<p>Select the <img alt="layers-link" src="../img/layers/layers-link.png" /> link on the top toolbar. This will bring up the Explore Layers page.</p>
+<p><img alt="explore-layers" src="../img/layers/explore-layers.png" /></p>
+</li>
+<li>
+<p>Select the <img alt="upload-layers" src="../img/layers/upload-layers.png" /> button. This will bring up the upload form.</p>
+</li>
+<li>
+<p>Either browse to the files to be uploaded or drag and drop them in the browser. Note that many files consist of multiple files to be complete. If you are uploading an ESRI Shapefile, then you need to include the .dbf, .prj, .shp, and .shx files.</p>
+<p><img alt="upload-form" src="../img/layers/upload-form.png" /></p>
+</li>
+<li>
+<p>Click on the <img alt="choose-file" src="../img/layers/choose-file.png" /> button. This will bring up a local file dialog. Navigate to your data folder and select the files composing the geospatial layer. Note that some data formats consist of multiple files.</p>
+</li>
+<li>
+<p>Exchange has the ability to restrict who can view, edit, and manage layers. On the right side of the page, under Who can view and download this data?, select Any registered user. This will ensure that anonymous view access is disabled.</p>
+</li>
+<li>
+<p>In the same area, under "Who can edit data for this layer?", type a user or users in the field that you want to restrict edit access to. This will ensure that only specific users are able to edit the data in the layer.</p>
+<p><img alt="permissions-edit" src="../img/layers/permissions-edit.png" /></p>
+</li>
+<li>
+<p>If no destination is selected, the files will be imported into the default spatial data store for Exchange. This will always be the destination for raster data.</p>
+<p>If you have vector data that you want to have time enabled, then check the box for <img alt="configure-time" src="../img/layers/configure-time.png" />.</p>
+<p>If you have vector data that you want to be versioned, then check the box for <img alt="import-geogig" src="../img/layers/import-geogig.png" />. The form will update to provide a dropdown menu for existing GeoGit repositories. To use an existing repository as the destination, select it in the dropdown. In order to import the data into a new GeoGig repository:</p>
+<ol>
+<li>type the name of the repository</li>
+<li>select that name in the dropdown so it appears in the field.
+<img alt="repo-field" src="../img/layers/repo-field.png" /></li>
+</ol>
+</li>
+<li>
+<p>Select the <img alt="upload-files-button" src="../img/layers/upload-files-button.png" /> button to upload the data and create a layer. A dialog will display <img alt="geoserver-step" src="../img/layers/geoserver-step.png" /> showing the progress of the upload.</p>
+<p>If you selected <img alt="configure-time" src="../img/layers/configure-time.png" />, then a new window will open for <strong>Time Options</strong>.</p>
+<p><img alt="time-options" src="../img/layers/time-options.png" /></p>
+<p>A feature can currently support one or two time attributes. If a single attribute is used, the feature is considered relevant at that single point in time. If two attributes are used, the second attribute represents the end of a valid period for the feature.</p>
+<p>A time attribute can be one of:</p>
+<ul>
+<li>An existing date</li>
+<li>Text that can be converted to a timestamp</li>
+<li>A number representing a year</li>
+</ul>
+<p><br />
+The 'best guess' will handle date and optional time variants of ISO-8601. In terms of the formatting flags noted above, these are:</p>
+<p><img alt="best-guess-format" src="../img/layers/best-guess-format.png" /></p>
+</li>
+<li>
+<p>Your layer has been uploaded to Exchange. Now you will be able to access to the its info page (clicking on the <img alt="layer-info-button" src="../img/layers/layer-info-button.png" /> button), access to its metadata edit form (clicking on the <img alt="edit-metadata-button" src="../img/layers/edit-metadata-button.png" /> button) or to manage the styles for it (clicking on the <img alt="manage-styles-button" src="../img/layers/manage-styles-button.png" /> button).</p>
+</li>
+</ol>
 <h3 id="layer-information">Layer information</h3>
 <ul>
 <li>TODO</li>
