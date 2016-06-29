@@ -204,10 +204,8 @@
 <p>If you have vector data that you want to be versioned, then check the box for <img alt="import-geogig" src="../img/layers/import-geogig.png" />. The form will update to provide a dropdown menu for existing GeoGit repositories. To use an existing repository as the destination, select it in the dropdown. In order to import the data into a new GeoGig repository:</p>
 <ol>
 <li>type the name of the repository</li>
-<li>
-<p>select that name in the dropdown so it appears in the field.</p>
-<p><img alt="repo-field" src="../img/layers/repo-field.png" /></p>
-</li>
+<li>select that name in the dropdown so it appears in the field.
+<img alt="repo-field" src="../img/layers/repo-field.png" /></li>
 </ol>
 </li>
 <li>
@@ -230,49 +228,134 @@ The 'best guess' will handle date and optional time variants of ISO-8601. In ter
 </li>
 </ol>
 <h3 id="layer-information">Layer information</h3>
+<p>Each layer has an information page associated to it, which has several options for managing the layer’s data. Information is available for the following:</p>
 <ul>
-<li>TODO</li>
+<li>Info – Displays general information about the layer</li>
+<li>Attributes</li>
+<li>Ratings – Based on the ratings of other users</li>
+<li>Comments – Any comments on the layer from users</li>
+<li>Legend – Maps using this layer – What other maps within  Exchange are using the layer</li>
+<li>Permissions – How others can see or modify this layer</li>
+<li>Styles – What styles are associated to the layer</li>
+<li>About – Provides information on the owner, Point of Contact and Metadata Author</li>
 </ul>
+<p>To access Layer Information, click the Layers link on the Exchange toolbar. This will open the Explore Layers page.  Here you will see the list of all of the available layers. Each layer has a thumbnail of the image, as well as the title, author, and any associated keywords.</p>
+<ol>
+<li>
+<p>Click the layer title you want to access.
+<img alt="layer-info-preview" src="../img/layers/layer-info-preview.png" /></p>
+</li>
+<li>
+<p>The layer's information page will open.
+<img alt="layer-info-copy" src="../img/layers/layer-info-copy.png" /></p>
+</li>
+</ol>
 <h4 id="layer-detail-tabs">Layer Detail Tabs</h4>
-<ul>
-<li>TODO</li>
-</ul>
+<p>There are five tabs that have information pertaining to the particular layer: Info, Attributes, Ratings, History and Comments.</p>
+<ol>
+<li>
+<p>The Info tab is the default, and displays basic information about the layer, such as the title, who created it, and when it was published.</p>
+<p><img alt="details-info" src="../img/layers/details-info.png" /></p>
+</li>
+<li>
+<p>The Attributes tab displays the layer attribute table. Layer attribute statistics will only display if the value is a numeric attribute, otherwise, no statistics will be calculated.</p>
+<p><img alt="details-attributes" src="../img/layers/details-attributes.png" /></p>
+</li>
+<li>
+<p>The Ratings tab displays all ratings that have been given to a layer by other users. Click on a star to rate the layer (one to five stars). Click the Cancel this rating icon to delete your rating.</p>
+<p><img alt="details-raitings" src="../img/layers/details-ratings.png" /></p>
+</li>
+<li>
+<p>The Comments tab allows you to see what others are saying about this layer, as well as leave a comment.</p>
+<p><img alt="details-comments" src="../img/layers/details-comments.png" /></p>
+</li>
+<li>
+<p>Click the <img alt="add-comment-button" src="../img/layers/add-comment-button.png" /> to leave a comment about the layer.</p>
+<p><img alt="add-comment" src="../img/layers/add-comment.png" /></p>
+<p>Click the <img alt="submit-comment" src="../img/layers/submit-comment.png" /> button to save comments.</p>
+</li>
+</ol>
 <h3 id="editing-metadata-and-managing-layers">Editing Metadata and Managing Layers</h3>
-<ul>
-<li>TODO</li>
-</ul>
+<p>Each layer’s information page allows you to view the information that makes up the layer. Exchange allows you to edit metadata pertaining to a layer that you have uploaded, as well as any layers you are given permissions to access by other users.</p>
 <h4 id="edit-metadata">Edit Metadata</h4>
-<ul>
-<li>TODO</li>
-</ul>
+<p>Metadata is information about the layer, such as the owner, title, purpose or restrictions on a layer. You can include as much information about the layer as you feel is important. The Abstract section is the description that will display in Exchange.</p>
+<ol>
+<li>
+<p>Click the <img alt="metadata-edit-layer" src="../img/layers/metadata-edit-layer.png" /> button, and select the edit button under Metadata.
+<img alt="metadata-edit" src="../img/layers/metadata-edit.png" /></p>
+</li>
+<li>
+<p>The Edit Metadata page will display.</p>
+</li>
+<li>Edit the information fields to include anything pertinent to the layer.</li>
+<li>Click the <img alt="metadata-update-button" src="../img/layers/metadata-update-button.png" /> button at either the top or bottom of the page to save your changes.</li>
+</ol>
 <h4 id="edit-permissions">Edit Permissions</h4>
-<ul>
-<li>TODO</li>
-</ul>
+<p>Layer permissions are established when the layer is first imported, but the administrator/owner of the layer can adjust those permissions as needed. Permissions allow you to manage who can view/download the data, who can make edits, and who can manage the data.</p>
+<ol>
+<li>
+<p>Click the <img alt="Change-Layer-Permissions" src="../img/layers/Change-Layer-Permissions.png" /> button.</p>
+</li>
+<li>
+<p>Set permissions for the resource to give the required access to the layer. Permissions can be granted to Anyone for viewing and downloading, if the checkbox is selected. Edit permissions can be given to registered individuals or groups.</p>
+<p><img alt="resource-Permissions" src="../img/layers/resource-Permissions.png" /></p>
+</li>
+<li>
+<p>Click Apply Changes to save.</p>
+</li>
+</ol>
 <h4 id="manage-styles">Manage Styles</h4>
-<ul>
-<li>TODO</li>
-</ul>
+<p>Layers can have multiple styles associated to it. The Styles section tells you which style(s) is currently associated to the layer.</p>
+<p><img alt="manage-styles" src="../img/layers/manage-styles.png" /></p>
+<ol>
+<li>Click the <img alt="metadata-edit-layer" src="../img/layers/metadata-edit-layer.png" /> button, and then Manage under Styles.
+<img alt="manage-edit-styles" src="../img/layers/manage-edit-styles.png" /></li>
+<li>Click the name of a style in the left-hand list to select it and move it to the right-hand list.</li>
+<li>Click a style in the right-hand list, and click the arrows between the lists to remove a style.</li>
+<li>Click the Update available Styles button to save changes.</li>
+</ol>
 <h4 id="replace-a-layer">Replace a Layer</h4>
-<ul>
-<li>TODO</li>
-</ul>
+<p>Replacing a layer allows you to upload a new layer, taking the place of the current later.</p>
+<ol>
+<li>
+<p>Click the <img alt="metadata-edit-layer" src="../img/layers/metadata-edit-layer.png" /> button, and select the Replace button.
+    <img alt="layer-remove-replace" src="../img/layers/layer-remove-replace.png" /></p>
+</li>
+<li>
+<p>Follow the instructions to upload a new layer.</p>
+</li>
+</ol>
 <h4 id="remove-a-layer">Remove a Layer</h4>
-<ul>
-<li>TODO</li>
-</ul>
+<p>Removing a layer will delete it completely from Boundless Exchange.</p>
+<ol>
+<li>
+<p>Click the <img alt="metadata-edit-layer" src="../img/layers/metadata-edit-layer.png" /> button, and select Remove.</p>
+</li>
+<li>
+<p>Verify your selection: <img alt="verify-remove-layer" src="../img/layers/verify-remove-layer.png" /> .</p>
+</li>
+</ol>
 <h3 id="downloading-data-from-a-layer">Downloading Data from a Layer</h3>
-<ul>
-<li>TODO</li>
-</ul>
-<h4 id="data">Data</h4>
-<ul>
-<li>TODO</li>
-</ul>
+<p>Within Exchange, there are two ways to extract data and metadata, download a layer or download a layer’s metadata. This facilitates the flow of geospatial data in (import) and out (export) of Exchange.</p>
+<h4 id="download-data">Download Data</h4>
+<ol>
+<li>Click the <img alt="download-layer" src="../img/layers/download-layer.png" /> button.</li>
+<li>
+<p>Select the format in which you’d like the data to be downloaded. Exchange currently offers 12 different formats for use in multiple geospatial platforms.</p>
+<p><img alt="DL-layer-options" src="../img/layers/DL-layer-options.png" /></p>
+</li>
+<li>
+<p>Save the file to your computer when the Save As dialog box opens.</p>
+</li>
+</ol>
 <h4 id="metadata">Metadata</h4>
-<ul>
-<li>TODO</li>
-</ul></div>
+<ol>
+<li>Click the <img alt="download-metadata-button" src="../img/layers/download-metadata-button.png" /> button.</li>
+<li>
+<p>Select the format in which you’d like to download the metadata.</p>
+<p><img alt="DL-meta-options" src="../img/layers/DL-meta-options.png" /></p>
+</li>
+</ol></div>
             
         </div>
 
