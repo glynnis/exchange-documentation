@@ -12,37 +12,49 @@
     
         
     <url>
-     <loc>None/user-guide/accounts/index.html</loc>
+     <loc>None/user/login/index.html</loc>
      <lastmod>2016-07-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/user-guide/discovery/index.html</loc>
+     <loc>None/user/landing/index.html</loc>
      <lastmod>2016-07-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/user-guide/documents/index.html</loc>
+     <loc>None/user/menu/index.html</loc>
      <lastmod>2016-07-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/user-guide/layers/index.html</loc>
+     <loc>None/user/layers/index.html</loc>
      <lastmod>2016-07-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/user-guide/maps/index.html</loc>
+     <loc>None/user/maps/index.html</loc>
      <lastmod>2016-07-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/user-guide/editing/index.html</loc>
+     <loc>None/user/documents/index.html</loc>
+     <lastmod>2016-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/user/people/index.html</loc>
+     <lastmod>2016-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/user/groups/index.html</loc>
      <lastmod>2016-07-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
