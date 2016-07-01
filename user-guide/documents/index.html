@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>License - Boundless Exchange</title>
+	<title>Working with  Documents - Boundless Exchange</title>
 
         <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -57,32 +57,32 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../user-guide/accounts/index.html">Accounts and Users</a>
+                            <a href="../accounts/index.html">Accounts and Users</a>
                         </li>
                     
                         <li >
-                            <a href="../../user-guide/discovery/index.html">Content Discovery in Exchange</a>
+                            <a href="../discovery/index.html">Content Discovery in Exchange</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="index.html">Working with  Documents</a>
                         </li>
                     
                         <li >
-                            <a href="../../user-guide/documents/index.html">Working with  Documents</a>
+                            <a href="../layers/index.html">Working with  Layers</a>
                         </li>
                     
                         <li >
-                            <a href="../../user-guide/layers/index.html">Working with  Layers</a>
+                            <a href="../maps/index.html">Working with  Maps</a>
                         </li>
                     
                         <li >
-                            <a href="../../user-guide/maps/index.html">Working with  Maps</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../user-guide/editing/index.html">Editing and Version Management</a>
+                            <a href="../editing/index.html">Editing and Version Management</a>
                         </li>
                     
                     </ul>
@@ -90,12 +90,12 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li class="active">
-                            <a href="index.html">License</a>
+                        <li >
+                            <a href="../../about/license/index.html">License</a>
                         </li>
                     
                     </ul>
@@ -107,12 +107,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li >
-                    <a rel="next" href="../../user-guide/editing/index.html">
+                    <a rel="next" href="../discovery/index.html">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li class="disabled">
-                    <a rel="prev" >
+                <li >
+                    <a rel="prev" href="../layers/index.html">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -124,33 +124,59 @@
 
         <div class="container">
             
-                <div class="col-md-12" role="main">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#working-with-documents">Working with Documents</a></li>
+        
+            <li><a href="#uploading-documents">Uploading Documents</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
 
-<h1 id="modified-bsd-license">Modified BSD License</h1>
-<p><em>Copyright © 2016, Boundless Spatial</em><br />
-<em>All rights reserved.</em></p>
-<p>Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:</p>
+<h2 id="working-with-documents">Working with Documents</h2>
+<hr />
+<p>You can upload documents to Exchange so that they’re readily available for users. Documents can be actual files or links to other documents online. You can also associate a document to a layer or a map.</p>
+<h3 id="uploading-documents">Uploading Documents</h3>
+<hr />
+<p>Exchange lets you upload documents to associate to layers or maps.</p>
+<p>To upload a document complete the following steps:</p>
 <ol>
-<li>Redistributions of source code must retain the above copyright
-   notice, this list of conditions and the following disclaimer.</li>
-<li>Redistributions in binary form must reproduce the above copyright
-   notice, this list of conditions and the following disclaimer in the
-   documentation and/or other materials provided with the distribution.</li>
-<li>Neither the name of the Boundless Spatial nor the
-   names of its contributors may be used to endorse or promote products
-   derived from this software without specific prior written permission.</li>
-</ol>
-<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL BOUNDLESS SPATIAL BE LIABLE FOR ANY
-DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p></div>
+<li>
+<p>In the documents page, click on the <img alt="upload-documents-button" src="../img/documents/upload-documents-button.png" /> button.</p>
+<p><strong>Note:</strong> <em>Your Site Administrators may limit specific file types, typically the following file types are able to be uploaded.</em></p>
+<p><img alt="file-types" src="../img/documents/file-types.png" /></p>
+</li>
+<li>
+<p>Type in the Title for the Document that will appear in Exchange</p>
+</li>
+<li>
+<p>Select the <img alt="choose-file" src="../img/documents/choose-file.png" /> button to browse to the file to upload or enter the URL for a web page or a document that’s online.</p>
+<p><img alt="url-upload" src="../img/documents/url-upload.png" /></p>
+</li>
+<li>
+<p>If you want to link the document to a map or a layer, choose it in the Link to section</p>
+<p><img alt="link-to" src="../img/documents/link-to.png" /></p>
+</li>
+<li>
+<p>Set permissions for who is able to view and manage the document accordingly</p>
+<p><img alt="document-permissions" src="../img/documents/document-permissions.png" /></p>
+</li>
+<li>
+<p>Click on the <img alt="upload" src="../img/documents/upload.png" /> button</p>
+</li>
+<li>
+<p>The next page will allow you to enter metadata for the document. It’s good to enter the Abstract at a minimum.</p>
+</li>
+<li>
+<p>When you have finished entering metadata click on the <img alt="update" src="../img/documents/update.png" /> button at the bottom of the page.</p>
+</li>
+<li>
+<p>The document will now be listed as a possible result under the Documents page..</p>
+</li>
+</ol></div>
             
         </div>
 

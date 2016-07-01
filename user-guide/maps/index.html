@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>Working with  Maps - Boundless Exchange</title>
+
+        <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href="../../index.html"><img src="../../img/logo.png">&nbsp;&nbsp;&nbsp;Boundless Exchange</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../../index.html">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../accounts/index.html">Accounts and Users</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../discovery/index.html">Content Discovery in Exchange</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../documents/index.html">Working with  Documents</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../layers/index.html">Working with  Layers</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="index.html">Working with  Maps</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../editing/index.html">Editing and Version Management</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../about/license/index.html">License</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../layers/index.html">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../editing/index.html">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#working-with-maps">Working with Maps</a></li>
+        
+            <li><a href="#create-a-map">Create a Map</a></li>
+        
+            <li><a href="#managing-maps">Managing Maps</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="working-with-maps">Working with Maps</h2>
+<p>Maps are comprised of various layers and their styles. Layers are available as local layers, or they can be remote layers, served from other web servers. Exchange maps can be manipulated via map zoom and extent, layer ordering, and style.</p>
+<h3 id="create-a-map">Create a Map</h3>
+<p>New maps can be created several ways. You can create a new map in the <strong>Explore Maps</strong> section, or from one or more layers.</p>
+<h4 id="create-a-new-map">Create a new map</h4>
+<p>Click Maps on the Boundless Exchange toolbar at the top of the page.
+    <img alt="exchange-toolbar-maps" src="../img/maps/exchange-toolbar-maps.png" /></p>
+<p>Click the <img alt="create-new-map" src="../img/maps/create-new-map.png" /> button.</p>
+<h4 id="create-a-new-map-from-a-layer">Create a new map from a layer</h4>
+<p>Click Layers on the Boundless Exchange toolbar.
+    <img alt="exchange-toolbar-layers" src="../img/maps/exchange-toolbar-layers.png" /></p>
+<p>Click <img alt="create-a-map" src="../img/maps/create-a-map.png" /> next to a layer. A new map will open with the layer as part of the map.</p>
+<h4 id="create-a-new-map-from-multiple-layers">Create a new map from multiple layers</h4>
+<ol>
+<li>
+<p>Click the <img alt="add-to-cart" src="../img/maps/add-to-cart.png" /> button  next to each of the layers you’d like to add to your map. The layers will display in your Cart.</p>
+</li>
+<li>
+<p>Click the <img alt="create-a-map" src="../img/maps/create-a-map.png" /> button to add all of the layers to a new map.</p>
+<p><img alt="create-map-from-cart" src="../img/maps/create-map-from-cart.png" /></p>
+<ul>
+<li>Remove a layer from the cart by clicking the X next to its name.</li>
+</ul>
+</li>
+</ol>
+<p>A new map will open with all of the layers displayed.</p>
+<h4 id="add-layers-to-a-map">Add layers to a map</h4>
+<p>Once you have your map opened, you can add additional layers.</p>
+<ol>
+<li>
+<p>Click the <strong>Add Layer (+)</strong> button in the Layers field.</p>
+<p><img alt="maps-add-layers" src="../img/maps/maps-add-layers.png" /></p>
+<p>The Add Layers dialog box will open. From here you can select which layer(s) you would like to add by clicking the checkbox next to the layer’s name.</p>
+<p><img alt="maps-add-layers-dialog" src="../img/maps/maps-add-layers-dialog.png" /></p>
+</li>
+<li>
+<p>Click the Add button when you have selected the layers you want to add.</p>
+</li>
+</ol>
+<h4 id="add-layers-from-another-server">Add layers from another server</h4>
+<p>You have the ability to add layers from a server other than the local Geoserver you’re working on. You can add web mappings servers (WMS), tile servers, MapQuest, MapBox and OpenStreetMap, for example.</p>
+<ol>
+<li>
+<p>Click the <strong>Add Layer (+)</strong> button in the Layers field.</p>
+</li>
+<li>
+<p>Click the drop down menu to select a server. Click <strong>Add New Server</strong> to add one that is not listed.</p>
+</li>
+<li>
+<p>Add the type of server (WMS or TMS), a name for the server and the URL in the Add Server dialog box.</p>
+<p><img alt="maps-add-server" src="../img/maps/maps-add-server.png" /></p>
+</li>
+<li>
+<p>Click the Add button to save it to the list of available servers. Once it is added, you can select the new server from the list, and add additional layers to the map.</p>
+</li>
+</ol>
+<h4 id="change-layer-order">Change layer order</h4>
+<p>Layers on a map are drawn from bottom to top. The top layer in your list will display on top of any layers below it. Each layer will appear in the order it is displayed in your list. Sometimes a layer may need to be reordered so it can be more clearly displayed.</p>
+<ol>
+<li>
+<p>Click on the name of the layer you want to reorder.</p>
+</li>
+<li>
+<p>Drag the layer up or down to the position you’d like the layer to be in.</p>
+</li>
+</ol>
+<p>The layer will now be visible in the new order in which you’ve moved it.</p>
+<h4 id="toggle-layer-visibility">Toggle layer visibility</h4>
+<p><img alt="toggle-layer-visibility" src="../img/maps/toggle-layer-visibility.png" /></p>
+<ol>
+<li>
+<p>Click the Toggle Visibility <img alt="toggle-visible-button" src="../img/maps/toggle-visible-button.png" /> button to turn a layer off.</p>
+</li>
+<li>
+<p>Click the Toggle Visibility <img alt="toggle-invisible-button" src="../img/maps/toggle-invisible-button.png" />  button again to turn a layer back on.</p>
+</li>
+</ol>
+<p>Toggle Visibility allows you to turn a layer’s display off and on without having to remove the layer form the map completely.</p>
+<h4 id="zoom-to-data">Zoom to data</h4>
+<p>The Zoom to data button allows you to center the map quickly on a particular layer. It is particularly convenient when you need to quickly return to the extent of the data for that layer.</p>
+<ol>
+<li>
+<p>Click a layer in the layer list.</p>
+</li>
+<li>
+<p>Click the Zoom to data button. The map will zoom in to and center on that particular layer extent.</p>
+<p><img alt="map-zoom-to-data" src="../img/maps/map-zoom-to-data.png" /></p>
+<p>Note: If a layer’s visibility is dependent on scale, and the data extent is at a lower scale, you will still need to zoom in to be able to view the data.</p>
+</li>
+</ol>
+<h4 id="show-layer-info">Show layer info</h4>
+<p>Information about a layer is available in the map by clicking the Show Layer Info button. Show Layer info will include server information, basic metadata, and the projection (SRS).</p>
+<ol>
+<li>
+<p>Click on a layer name in the layer list to expand the layer options.</p>
+</li>
+<li>
+<p>Click the Show layer info button.</p>
+<p><img alt="show-layer-info" src="../img/maps/show-layer-info.png" /></p>
+<p>The layer Info window will display.</p>
+<p><img alt="layer-info" src="../img/maps/layer-info.png" /></p>
+</li>
+</ol>
+<h4 id="remove-a-layer-from-the-map">Remove a layer from the map</h4>
+<ol>
+<li>
+<p>To remove a layer from the map, click the name of the layer you’d like to remove, and click the Remove layer button in the layer tools.</p>
+<p><img alt="remove-a-layer" src="../img/maps/remove-a-layer.png" /></p>
+</li>
+<li>
+<p>Click the Yes button in the confirmation dialog box.</p>
+<p><img alt="confirm-remove-layer" src="../img/maps/confirm-remove-layer.png" /></p>
+</li>
+</ol>
+<h4 id="get-feature-information">Get feature information</h4>
+<p>To get information in a vector layer, simply click on a feature on the map. Once you click the feature, the information window will display. The point of the information window will touch the feature you clicked.</p>
+<p><img alt="get-feature-info" src="../img/maps/get-feature-info.png" /></p>
+<h4 id="change-attribute-visibility">Change attribute visibility</h4>
+<p>Individual attribute visibility can be turned off and on in a feature window. This can make managing large numbers of attribute fields in a layer easier.</p>
+<ol>
+<li>
+<p>Click the layer name in the layer list on the map. The layer’s additional options will display.</p>
+<p><img alt="toggle-attribute-visibility" src="../img/maps/toggle-attribute-visibility.png" /></p>
+</li>
+<li>
+<p>Click on the visibility button for an individual icon to toggle the visibility off and on.</p>
+</li>
+<li>
+<p>Click a feature on the map from that layer. It will no longer appear, as it has been toggled off.</p>
+</li>
+</ol>
+<h4 id="using-the-legend">Using the Legend</h4>
+<p>A legend displayed the symbols used for vector layers in a map. It can be toggled off and on to maximize screen space when necessary.</p>
+<p><img alt="maps-legend" src="../img/maps/maps-legend.png" /></p>
+<p>Click the Toggle Legend button to toggle the legend off and on.</p>
+<p><img alt="toggle-legend" src="../img/maps/toggle-legend.png" /></p>
+<h4 id="save-a-map">Save a map</h4>
+<p>Saving a map allows you to maintain your preferences for the next use, as well as makes it available for other Exchange users.</p>
+<ol>
+<li>
+<p>Click the Save this map button.</p>
+<p><img alt="save-map" src="../img/maps/save-map.png" /></p>
+</li>
+<li>
+<p>Add a title and an abstract for your map so it is searchable by others. Click the Save button to save your changes. The name will be reflected in the title, and replace “New Map.”</p>
+<p><img alt="save-this-map" src="../img/maps/save-this-map.png" /></p>
+<p>The Map is now saved in the list of maps on the Maps page.</p>
+</li>
+</ol>
+<h4 id="create-a-copy-of-a-map">Create a copy of a map</h4>
+<p>You are able to use an existing map as a starting point for another map. This allows you to incorporate the work others have done without changing their maps.</p>
+<ol>
+<li>
+<p>Click the Save this map <img alt="save-map-button" src="../img/maps/save-map-button.png" />    button on the toolbar.</p>
+</li>
+<li>
+<p>Add a title and abstract for the map.</p>
+</li>
+<li>
+<p>Click the Save Copy button <img alt="save-map-copy" src="../img/maps/save-map-copy.png" />  .</p>
+</li>
+</ol>
+<p>A copy of the original map is now saved in the list of maps on the Maps page.</p>
+<h3 id="managing-maps">Managing Maps</h3>
+<p>Every map has it’s own page that provides more information about the map along with other options such as permissions and metadata. To get to the page for a map, click on the name of the map.</p>
+<p><img alt="manage-maps-details" src="../img/maps/manage-maps-details.png" /></p>
+<p>The map detail page provides a thumbnail view of the map, along with information about the map. It also tells you the layers that are used in the map.</p>
+<p><img alt="maps-details" src="../img/maps/maps-details.png" /></p>
+<h4 id="download-data-layers">Download Data Layers</h4>
+<p>This will allow you to download the contents of the map that are stored in Exchange. It does not download data from other servers, however.</p>
+<ol>
+<li>
+<p>Click the <img alt="download-map-button" src="../img/maps/download-map-button.png" /> button.</p>
+</li>
+<li>
+<p>Select Download Data Layers.</p>
+<p><img alt="download-data-layers" src="../img/maps/download-data-layers.png" /></p>
+<p>If multiple layers exist, you will be able to select one or more of the available layers. For example, in this map, the only layer associated to it is the <strong>nyap</strong> layer, as shown in the Map Layers section.</p>
+<p><img alt="map-uses-this-layer" src="../img/maps/map-uses-this-layer.png" /></p>
+</li>
+<li>
+<p>Select the layer(s) that you want to download individually OR click the <img alt="start-downloading-this-map" src="../img/maps/start-downloading-this-map.png" /> button to begin downloading.  </p>
+</li>
+</ol>
+<h4 id="download-web-map-context">Download Web Map Context</h4>
+<p>The Web Map Context (WMC) is an open geospatial consortium (OGC) standard for metadata describing a map service.</p>
+<ol>
+<li>
+<p>Click the <img alt="download-map-button" src="../img/maps/download-map-button.png" /> button.</p>
+</li>
+<li>
+<p>Select Download Web Map Context from the menu.</p>
+<p><img alt="download-data-layers" src="../img/maps/download-data-layers.png" /></p>
+<p>A new tab will open with the XML for the web map context.</p>
+</li>
+</ol>
+<h4 id="edit-map-metadata">Edit Map Metadata</h4>
+<p>You can edit the information about the map.</p>
+<ol>
+<li>
+<p>Click the <img alt="edit-map-button" src="../img/maps/edit-map-button.png" /> button</p>
+</li>
+<li>
+<p>Click the <strong>Edit</strong>  button under Metadata on the Edit Map menu.
+    <img alt="edit-map" src="../img/maps/edit-map.png" /></p>
+<p>In the metadata page, fill in the fields with information about the map. The more information you provide, the better others will understand your map.</p>
+</li>
+<li>
+<p>Click the <strong>Update</strong> button at the top or bottom of the page to save your changes.</p>
+</li>
+</ol>
+<h4 id="set-map-thumbnail">Set Map Thumbnail</h4>
+<p>By default the thumbnail images for maps will only have the vector layers. In order to include the background map you will need to use the Set Map Thumbnail button.</p>
+<ol>
+<li>
+<p>Pan and/or zoom the inset map on the <strong>Map Details</strong> page so that it’s centered on the view you would like for the map thumbnail.</p>
+</li>
+<li>
+<p>Click the <img alt="edit-map-button" src="../img/maps/edit-map-button.png" /> button.</p>
+</li>
+<li>
+<p>Click the <strong>Set</strong> button under Thumbnail on the Edit Map menu.
+    <img alt="edit-map" src="../img/maps/edit-map.png" /></p>
+</li>
+</ol>
+<p>This will set the map thumbnail with the base map and layers included.</p>
+<p><img alt="old-thumbnail" src="../img/maps/old-thumbnail.png" />
+<em>Old Thumbnail</em></p>
+<p><img alt="new-thumbnail" src="../img/maps/new-thumbnail.png" />
+<em>New Thumbnail</em></p>
+<h4 id="edit-map-permissions">Edit Map Permissions</h4>
+<p>The map permissions determine which users can view or edit a map. The permissions can be set to establish:</p>
+<ul>
+<li>Who can view it?</li>
+<li>Who can download it?</li>
+<li>Who can change metadata for it?</li>
+<li>
+<p>Who can manage it? (updated, delete, change permissions, publish/edit)</p>
+<ol>
+<li>
+<p>Click the <img alt="change-permissions" src="../img/maps/change-permissions.png" /> button in the <strong>Permissions</strong> section.</p>
+<p><img alt="permissions" src="../img/maps/permissions.png" /></p>
+</li>
+<li>
+<p>Establish the permissions for viewing, editing, and managing according to your needs.</p>
+<p><img alt="set-resource-permission" src="../img/maps/set-resource-permissions.png" /></p>
+</li>
+<li>
+<p>Click the <strong>Apply Changes</strong> button to save changes.</p>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="remove-a-map">Remove a Map</h4>
+<p>You are able to remove a map from Exchange. This will remove the map for all users.</p>
+<ol>
+<li>
+<p>Click the <img alt="edit-map-button" src="../img/maps/edit-map-button.png" /> button.</p>
+</li>
+<li>
+<p>Click the red <strong>Remove</strong> button under Map in the Edit Map menu.
+    <img alt="edit-map" src="../img/maps/edit-map.png" /></p>
+</li>
+<li>
+<p>Click <strong>Yes, I am sure</strong> to confirm.</p>
+<p><img alt="confirm-remove-map" src="../img/maps/confirm-remove-map.png" /></p>
+</li>
+</ol></div>
+            
+        </div>
+
+    <footer class="col-md-12">
+        <hr>
+        <center><p align="center">
+            <img src="../../img/logo.png" vspace="20"/>&nbsp;
+            Copyright © Boundless Spatial
+            <script type="text/javascript">document.write(new Date().getFullYear());</script>
+        </center>
+    </footer>
+
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>
