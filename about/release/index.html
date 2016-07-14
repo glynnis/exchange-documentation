@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>License - Boundless Exchange</title>
+	<title>Release Notes - Boundless Exchange</title>
 
         <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -94,12 +94,12 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li >
-                            <a href="../release/index.html">Release Notes</a>
+                        <li class="active">
+                            <a href="index.html">Release Notes</a>
                         </li>
                     
-                        <li class="active">
-                            <a href="index.html">License</a>
+                        <li >
+                            <a href="../license/index.html">License</a>
                         </li>
                     
                     </ul>
@@ -111,12 +111,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li >
-                    <a rel="next" href="../release/index.html">
+                    <a rel="next" href="../../user-guide/editing/index.html">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li class="disabled">
-                    <a rel="prev" >
+                <li >
+                    <a rel="prev" href="../license/index.html">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -130,31 +130,80 @@
             
                 <div class="col-md-12" role="main">
 
-<h1 id="modified-bsd-license">Modified BSD License</h1>
-<p><em>Copyright © 2016, Boundless Spatial</em><br />
-<em>All rights reserved.</em></p>
-<p>Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:</p>
+<h1 id="boundless-exchange-v100-release-notes">Boundless Exchange v1.0.0 Release Notes</h1>
+<p>29 July, 2016</p>
+<p>Boundless Exchange is a web-based platform for your content, built for your enterprise. It facilitates the creation, sharing, and collaborative use of geospatial data. For power users, advanced editing capabilities for versioned workflows via the web browser are included. Boundless Exchange is powered by <a href="http://geonode.org/">GeoNode</a>, <a href="http://geogig.org/">GeoGig</a>, <a href="http://openlayers.org/">OpenLayers</a>, <a href="http://postgis.net/">PostGIS</a> and <a href="http://geoserver.org/">GeoServer</a>.</p>
+<h4 id="additions">Additions</h4>
 <ol>
-<li>Redistributions of source code must retain the above copyright
-   notice, this list of conditions and the following disclaimer.</li>
-<li>Redistributions in binary form must reproduce the above copyright
-   notice, this list of conditions and the following disclaimer in the
-   documentation and/or other materials provided with the distribution.</li>
-<li>Neither the name of the Boundless Spatial nor the
-   names of its contributors may be used to endorse or promote products
-   derived from this software without specific prior written permission.</li>
+<li>Adjusted Templates<ul>
+<li>New logos and color scheme</li>
+<li>Upload Document/Layer and Create Basemap on Main Page</li>
+<li>Default CRS displays in remote services page</li>
+</ul>
+</li>
+<li>Custom Skinning<ul>
+<li>Banner Image</li>
+<li>Hyperlink Color</li>
+<li>Icon Image</li>
+<li>Logo Image</li>
+<li>Navigation Bar Color</li>
+<li>Site Name</li>
+<li>Tag Line</li>
+</ul>
+</li>
+<li>Registry (HHypermap) integration</li>
+<li>Registry layer display in MapLoom</li>
+<li>PYCSW transaction support</li>
+<li>Support to store configuration in the environment via variables (Twelve Factor App)</li>
+<li>Custom thumbnails for layers and maps</li>
+<li>S3 Storage support for static and media files</li>
+<li>Additional Base Map support<ul>
+<li><a href="https://www.mapbox.com/">MapBox</a> (Requires Access Token)</li>
+<li><a href="https://carto.com/">Carto</a></li>
+<li><a href="http://stamen.com/">Stamen</a></li>
+<li><a href="http://www.thunderforest.com/">Thunderforest</a></li>
+<li>Alternate OpenStreetMap versions</li>
+</ul>
+</li>
+<li>LDAP Support</li>
+<li>WebGate authentication module</li>
 </ol>
-<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL BOUNDLESS SPATIAL BE LIABLE FOR ANY
-DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p></div>
+<h4 id="dependencies">Dependencies</h4>
+<ul>
+<li>Python 2.7.11</li>
+<li>Java 1.8.0</li>
+<li>GDAL 2.1.0</li>
+<li>GEOS 3.5.0</li>
+<li>PROJ 4.8.0</li>
+<li>GeoServer 2.9</li>
+<li>GeoNode Extension</li>
+<li>GeoGig Extension</li>
+<li>ElasticSearch 1.7.5</li>
+<li>RabbitMQ Server 3.6.1</li>
+<li>PostgreSQL 9.5.3</li>
+<li>PostGIS 2.2.2</li>
+</ul>
+<h4 id="removals">Removals</h4>
+<ul>
+<li>None at this time</li>
+</ul>
+<h4 id="changes">Changes</h4>
+<ul>
+<li>None at this time</li>
+</ul>
+<h4 id="fixes">Fixes</h4>
+<ul>
+<li>None at this time</li>
+</ul>
+<h4 id="platform-support">Platform Support</h4>
+<ul>
+<li>CentOS/RHEL 6</li>
+<li>CentOS/RHEL 7</li>
+</ul>
+<h4 id="known-issues">Known Issues</h4>
+<ul>
+<li>None at this time</li>
+</ul></div>
             
         </div>
 

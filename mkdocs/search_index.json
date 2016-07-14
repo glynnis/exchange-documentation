@@ -2,13 +2,13 @@
     "docs": [
         {
             "location": "/index.html", 
-            "text": "Boundless Exchange 1.0.0 Final\n\n\nBoundless Exchange is a web-based platform for your content, built for your enterprise. It facilitates the creation, sharing, and collaborative use of geospatial data. For power users, advanced editing capabilities for versioned workflows via the web browser are included. Boundless Exchange is powered by GeoNode, GeoGig, OpenLayers, PostGIS and GeoServer.\nBoundless Exchange is designed as a platform for collaboration. You can now focus on your community \u2013 getting stakeholders quickly involved and empowering them with information. Exchange supports communal editing \u2013 allowing you to crowd-source information in an online, powerful, distributed/versioned architecture with an intuitive user interface.\n\n\npowered by Open Source Geospatial:\n\n\n \n Exchange is a \nGeoNode\n Django Project (Geospatial Content Management System).\n\n\n \n \nGeoGig\n is available as a vector storage within Exchange. This is used to track geospatial data edits.\n\n\n \n MapLoom is Exchange's primary mapping client, and is based on \nOpenLayers 3\n. It provides full-featured editing capabilities.\n\n\n \n \nPostGIS\n is available as a vector storage within Exchange.\n\n\n \n \nGeoServer\n is the spatial application server for Exchange that manages the WFS, WMS and WMTS requests and responses.", 
+            "text": "Boundless Exchange v1.0.0\n\n\nBoundless Exchange is a web-based platform for your content, built for your enterprise. It facilitates the creation, sharing, and collaborative use of geospatial data. For power users, advanced editing capabilities for versioned workflows via the web browser are included. Boundless Exchange is powered by GeoNode, GeoGig, OpenLayers, PostGIS and GeoServer.\nBoundless Exchange is designed as a platform for collaboration. You can now focus on your community \u2013 getting stakeholders quickly involved and empowering them with information. Exchange supports communal editing \u2013 allowing you to crowd-source information in an online, powerful, distributed/versioned architecture with an intuitive user interface.\n\n\npowered by Open Source Geospatial:\n\n\n \n Exchange is a \nGeoNode\n Django Project (Geospatial Content Management System).\n\n\n \n \nGeoGig\n is available as a vector storage within Exchange. This is used to track geospatial data edits.\n\n\n \n MapLoom is Exchange's primary mapping client, and is based on \nOpenLayers 3\n. It provides full-featured editing capabilities.\n\n\n \n \nPostGIS\n is available as a vector storage within Exchange.\n\n\n \n \nGeoServer\n is the spatial application server for Exchange that manages the WFS, WMS and WMTS requests and responses.", 
             "title": "Home"
         }, 
         {
-            "location": "/index.html#boundless-exchange-100-final", 
+            "location": "/index.html#boundless-exchange-v100", 
             "text": "Boundless Exchange is a web-based platform for your content, built for your enterprise. It facilitates the creation, sharing, and collaborative use of geospatial data. For power users, advanced editing capabilities for versioned workflows via the web browser are included. Boundless Exchange is powered by GeoNode, GeoGig, OpenLayers, PostGIS and GeoServer.\nBoundless Exchange is designed as a platform for collaboration. You can now focus on your community \u2013 getting stakeholders quickly involved and empowering them with information. Exchange supports communal editing \u2013 allowing you to crowd-source information in an online, powerful, distributed/versioned architecture with an intuitive user interface.  powered by Open Source Geospatial:     Exchange is a  GeoNode  Django Project (Geospatial Content Management System).      GeoGig  is available as a vector storage within Exchange. This is used to track geospatial data edits.     MapLoom is Exchange's primary mapping client, and is based on  OpenLayers 3 . It provides full-featured editing capabilities.      PostGIS  is available as a vector storage within Exchange.      GeoServer  is the spatial application server for Exchange that manages the WFS, WMS and WMTS requests and responses.", 
-            "title": "Boundless Exchange 1.0.0 Final"
+            "title": "Boundless Exchange v1.0.0"
         }, 
         {
             "location": "/user-guide/accounts/index.html", 
@@ -364,6 +364,51 @@
             "location": "/user-guide/editing/index.html#export-history", 
             "text": "You can export a summary of all of the edits within a date range for a layer.    Click the  Show History  button for layer you want to summarize.     Click on the History Summary button.     Enter the date range for the history to summarize.     Click the  Export CSV  button.    When prompted to save the file, browse to the location where you want to save it, and click Ok.", 
             "title": "Export history"
+        }, 
+        {
+            "location": "/about/release/index.html", 
+            "text": "Boundless Exchange v1.0.0 Release Notes\n\n\n29 July, 2016\n\n\nBoundless Exchange is a web-based platform for your content, built for your enterprise. It facilitates the creation, sharing, and collaborative use of geospatial data. For power users, advanced editing capabilities for versioned workflows via the web browser are included. Boundless Exchange is powered by \nGeoNode\n, \nGeoGig\n, \nOpenLayers\n, \nPostGIS\n and \nGeoServer\n.\n\n\nAdditions\n\n\n\n\nAdjusted Templates\n\n\nNew logos and color scheme\n\n\nUpload Document/Layer and Create Basemap on Main Page\n\n\nDefault CRS displays in remote services page\n\n\n\n\n\n\nCustom Skinning\n\n\nBanner Image\n\n\nHyperlink Color\n\n\nIcon Image\n\n\nLogo Image\n\n\nNavigation Bar Color\n\n\nSite Name\n\n\nTag Line\n\n\n\n\n\n\nRegistry (HHypermap) integration\n\n\nRegistry layer display in MapLoom\n\n\nPYCSW transaction support\n\n\nSupport to store configuration in the environment via variables (Twelve Factor App)\n\n\nCustom thumbnails for layers and maps\n\n\nS3 Storage support for static and media files\n\n\nAdditional Base Map support\n\n\nMapBox\n (Requires Access Token)\n\n\nCarto\n\n\nStamen\n\n\nThunderforest\n\n\nAlternate OpenStreetMap versions\n\n\n\n\n\n\nLDAP Support\n\n\nWebGate authentication module\n\n\n\n\nDependencies\n\n\n\n\nPython 2.7.11\n\n\nJava 1.8.0\n\n\nGDAL 2.1.0\n\n\nGEOS 3.5.0\n\n\nPROJ 4.8.0\n\n\nGeoServer 2.9\n\n\nGeoNode Extension\n\n\nGeoGig Extension\n\n\nElasticSearch 1.7.5\n\n\nRabbitMQ Server 3.6.1\n\n\nPostgreSQL 9.5.3\n\n\nPostGIS 2.2.2\n\n\n\n\nRemovals\n\n\n\n\nNone at this time\n\n\n\n\nChanges\n\n\n\n\nNone at this time\n\n\n\n\nFixes\n\n\n\n\nNone at this time\n\n\n\n\nPlatform Support\n\n\n\n\nCentOS/RHEL 6\n\n\nCentOS/RHEL 7\n\n\n\n\nKnown Issues\n\n\n\n\nNone at this time", 
+            "title": "Release Notes"
+        }, 
+        {
+            "location": "/about/release/index.html#boundless-exchange-v100-release-notes", 
+            "text": "29 July, 2016  Boundless Exchange is a web-based platform for your content, built for your enterprise. It facilitates the creation, sharing, and collaborative use of geospatial data. For power users, advanced editing capabilities for versioned workflows via the web browser are included. Boundless Exchange is powered by  GeoNode ,  GeoGig ,  OpenLayers ,  PostGIS  and  GeoServer .", 
+            "title": "Boundless Exchange v1.0.0 Release Notes"
+        }, 
+        {
+            "location": "/about/release/index.html#additions", 
+            "text": "Adjusted Templates  New logos and color scheme  Upload Document/Layer and Create Basemap on Main Page  Default CRS displays in remote services page    Custom Skinning  Banner Image  Hyperlink Color  Icon Image  Logo Image  Navigation Bar Color  Site Name  Tag Line    Registry (HHypermap) integration  Registry layer display in MapLoom  PYCSW transaction support  Support to store configuration in the environment via variables (Twelve Factor App)  Custom thumbnails for layers and maps  S3 Storage support for static and media files  Additional Base Map support  MapBox  (Requires Access Token)  Carto  Stamen  Thunderforest  Alternate OpenStreetMap versions    LDAP Support  WebGate authentication module", 
+            "title": "Additions"
+        }, 
+        {
+            "location": "/about/release/index.html#dependencies", 
+            "text": "Python 2.7.11  Java 1.8.0  GDAL 2.1.0  GEOS 3.5.0  PROJ 4.8.0  GeoServer 2.9  GeoNode Extension  GeoGig Extension  ElasticSearch 1.7.5  RabbitMQ Server 3.6.1  PostgreSQL 9.5.3  PostGIS 2.2.2", 
+            "title": "Dependencies"
+        }, 
+        {
+            "location": "/about/release/index.html#removals", 
+            "text": "None at this time", 
+            "title": "Removals"
+        }, 
+        {
+            "location": "/about/release/index.html#changes", 
+            "text": "None at this time", 
+            "title": "Changes"
+        }, 
+        {
+            "location": "/about/release/index.html#fixes", 
+            "text": "None at this time", 
+            "title": "Fixes"
+        }, 
+        {
+            "location": "/about/release/index.html#platform-support", 
+            "text": "CentOS/RHEL 6  CentOS/RHEL 7", 
+            "title": "Platform Support"
+        }, 
+        {
+            "location": "/about/release/index.html#known-issues", 
+            "text": "None at this time", 
+            "title": "Known Issues"
         }, 
         {
             "location": "/about/license/index.html", 

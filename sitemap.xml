@@ -52,6 +52,12 @@
     
         
     <url>
+     <loc>None/about/release/index.html</loc>
+     <lastmod>2016-07-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/about/license/index.html</loc>
      <lastmod>2016-07-13</lastmod>
      <changefreq>daily</changefreq>
