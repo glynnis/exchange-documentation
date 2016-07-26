@@ -366,6 +366,36 @@
             "title": "Export history"
         }, 
         {
+            "location": "/user-guide/registry/index.html", 
+            "text": "Registry\n\n\nRegistry is a system for building, maintaining, and deploying a public registry of web map services of various types, OGC and Esri services. From a user's perspective, registry integration is within the mapping client. Rather than having to add multiple services into exchange, registry exposes external services and allows the user to add them to their map.\n\n\nSearch the registry for a layer\n\n\nCreate a new map\n\n\nRegistry layers can be added to an existing map, but this example demonstrates how to create a new map, and add a registry layer.\n\n\n\n\n\n\nTo create a new map select Maps on the Boundless Exchange toolbar at the top of the page.\n\n\n\n\n\n\n\n\nSelect the Create button from the Exchange homepage.\n\n\n\n\n\n\n\n\nA new map will open, and Registry will be displayed in the map menu.\n\n\n\n\nSearch for a layer\n\n\n\n\n\n\nSelect the \nRegistry of layer\n button.\n\n\n\n\n\n\n\n\nThe \nRegistry of layers\n window will open.\n\n\n\n\n\n\n\n\nType a search term in the text box to search for a layer related to that term.\n\n\n\n\nYou can filter the layer results by time using either the text boxes or the slide bar.\n\n\n\n\n\n\nType a year in the From text box to select a starting time. Then type a year in the To text box to select an end year. Years containing data are represented in the bar graph.\n\n\n\n\nYou can also click and drag the points on the slide bar to select From and To dates.\n\n\n\n\n\n\nClick the \n button to submit your search, or the \n button to clear your search terms.\n\n\n\n\n\n\nYour search results will display in a new window.\n\n\n\n\nAdd a layer from the registry to the map\n\n\nOnce you have search results from the registry, you can select specific layers to add to your map.\n\n\n\n\n\n\nHover your mouse over a layer in the results list. Additional information about the layer will display in the window near the results list.\n\n\n\n\n\n\n\n\nSelect the layer in the search results list to add it to your cart.\n\n\n\n\nThe layer will be highlighted, and will display in the Cart window.\n\n\n\n\n\n\n\n\nSelect the \n button to add the layer to your map.\n\n\n\n\n\n\nYour layers will now be added to your map menu, and displayed on your map.", 
+            "title": "Registry Layers"
+        }, 
+        {
+            "location": "/user-guide/registry/index.html#registry", 
+            "text": "Registry is a system for building, maintaining, and deploying a public registry of web map services of various types, OGC and Esri services. From a user's perspective, registry integration is within the mapping client. Rather than having to add multiple services into exchange, registry exposes external services and allows the user to add them to their map.", 
+            "title": "Registry"
+        }, 
+        {
+            "location": "/user-guide/registry/index.html#search-the-registry-for-a-layer", 
+            "text": "", 
+            "title": "Search the registry for a layer"
+        }, 
+        {
+            "location": "/user-guide/registry/index.html#create-a-new-map", 
+            "text": "Registry layers can be added to an existing map, but this example demonstrates how to create a new map, and add a registry layer.    To create a new map select Maps on the Boundless Exchange toolbar at the top of the page.     Select the Create button from the Exchange homepage.     A new map will open, and Registry will be displayed in the map menu.", 
+            "title": "Create a new map"
+        }, 
+        {
+            "location": "/user-guide/registry/index.html#search-for-a-layer", 
+            "text": "Select the  Registry of layer  button.     The  Registry of layers  window will open.     Type a search term in the text box to search for a layer related to that term.   You can filter the layer results by time using either the text boxes or the slide bar.    Type a year in the From text box to select a starting time. Then type a year in the To text box to select an end year. Years containing data are represented in the bar graph.   You can also click and drag the points on the slide bar to select From and To dates.    Click the   button to submit your search, or the   button to clear your search terms.    Your search results will display in a new window.", 
+            "title": "Search for a layer"
+        }, 
+        {
+            "location": "/user-guide/registry/index.html#add-a-layer-from-the-registry-to-the-map", 
+            "text": "Once you have search results from the registry, you can select specific layers to add to your map.    Hover your mouse over a layer in the results list. Additional information about the layer will display in the window near the results list.     Select the layer in the search results list to add it to your cart.   The layer will be highlighted, and will display in the Cart window.     Select the   button to add the layer to your map.    Your layers will now be added to your map menu, and displayed on your map.", 
+            "title": "Add a layer from the registry to the map"
+        }, 
+        {
             "location": "/about/release/index.html", 
             "text": "Boundless Exchange v1.0.0 Release Notes\n\n\n29 July, 2016\n\n\nBoundless Exchange is a web-based platform for your content, built for your enterprise. It facilitates the creation, sharing, and collaborative use of geospatial data. For power users, advanced editing capabilities for versioned workflows via the web browser are included. Boundless Exchange is powered by \nGeoNode\n, \nGeoGig\n, \nOpenLayers\n, \nPostGIS\n, \nGeoServer\n and \npycsw\n.\n\n\nAdditions\n\n\n\n\nAdjusted Templates\n\n\nNew logos and color scheme\n\n\nUpload Document/Layer and Create Basemap on Main Page\n\n\nDefault CRS displays in remote services page\n\n\n\n\n\n\nCustom Skinning\n\n\nBanner Image\n\n\nHyperlink Color\n\n\nIcon Image\n\n\nLogo Image\n\n\nNavigation Bar Color\n\n\nSite Name\n\n\nTag Line\n\n\n\n\n\n\nRegistry (HHypermap) integration\n\n\nRegistry layer display in MapLoom\n\n\npycsw transaction support\n\n\nSupport to store configuration in the environment via variables (Twelve Factor App)\n\n\nCustom thumbnails for layers and maps\n\n\nS3 Storage support for static and media files\n\n\nAdditional Base Map support\n\n\nMapBox\n (Requires Access Token)\n\n\nCarto\n\n\nStamen\n\n\nThunderforest\n\n\nAlternate OpenStreetMap versions\n\n\n\n\n\n\nLDAP Support\n\n\nWebGate authentication module\n\n\n\n\nDependencies\n\n\n\n\nPython 2.7.11\n\n\nJava 1.8.0\n\n\nGDAL 2.1.0\n\n\nGEOS 3.5.0\n\n\nPROJ 4.8.0\n\n\nGeoServer 2.9\n\n\nGeoNode Extension\n\n\nGeoGig Extension\n\n\nElasticSearch 1.7.5\n\n\nRabbitMQ Server 3.6.1\n\n\nPostgreSQL 9.5.3\n\n\nPostGIS 2.2.2\n\n\n\n\nRemovals\n\n\n\n\nNone at this time\n\n\n\n\nChanges\n\n\n\n\nNone at this time\n\n\n\n\nFixes\n\n\n\n\nNone at this time\n\n\n\n\nPlatform Support\n\n\n\n\nCentOS/RHEL 6\n\n\nCentOS/RHEL 7\n\n\n\n\nKnown Issues\n\n\n\n\nNone at this time", 
             "title": "Release Notes"
