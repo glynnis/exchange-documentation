@@ -396,6 +396,106 @@
             "title": "Add a layer from the registry to the map"
         }, 
         {
+            "location": "/user-guide/csw/index.html", 
+            "text": "Catalogue Service for the Web (CSW)\n\n\nCSW (Catalogue Service for the Web) is an OGC (Open Geospatial Consortium) specification that defines common interfaces to discover, browse, and query metadata about data, services, and other potential resources.\n\n\nData.gov provides access to its catalog via the CSW standard for both first-order and all metadata for harvested data, services and applications. The first-order CSW endpoint provides collection level filtering of all metadata records. The all metadata CSW endpoint provides all levels of metadata at varying levels of granularity.\n\n\nAny client supporting CSW (desktop, GIS, web application, client library, etc.) can integrate the Data.gov CSW endpoints.\n\n\nInteracting with the Data.gov CSW\n\n\nThe Data.gov CSW endpoints are implemented using pycsw. pycsw is an OGC CSW server implementation written in Python, enabling the publishing and discovery of data and services, providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is Certified OGC Compliant and is an OGC Reference Implementation.\n\n\nData.gov CSW endpoints\n\n\nThe Data.gov CSW endpoints support the OGC CSW 2.0.2 standard as well as the ISO Metadata Application 1.0.0 Profile. The CSW endpoints operate over HTTP GET, POST (XML) and SOAP.\n\n\nMaking HTTP POST (XML) requests\n\n\nWhile making HTTP GET requests is relatively straightforward, HTTP POST (XML) requests require the client to open the connection and send the request XML as the payload. Below are a few examples on how to run HTTP POST (XML) requests on the command line:\n\n\n\n\nService Endpoints\n\n\nFirst-order metadata: http://catalog.data.gov/csw\n\n\nAll metadata: http://catalog.data.gov/csw-all\n\n\nWe will use the first-order CSW endpoint for the examples below.\n\n\nGetCapabilities\n\n\nThe \nGetCapabilities\n operation provides CSW clients with service metadata about the CSW service as an XML document.\n\n\nExamples:\n\n\nHTTP GET:\n http://catalog.data.gov/csw?service=CSW\nversion=2.0.2\nrequest=GetCapabilities\n\n\nHTTP POST (XML):\n\n\n\n\nDescribeRecord\n\n\nThe DescribeRecord operation provides CSW clients with elements of supported information models of the CSW service.\n\n\nExamples:\n\n\nHTTP GET:\n http://catalog.data.gov/csw?service=CSW\nversion=2.0.2\nrequest=DescribeRecord\n\n\nHTTP POST (XML):\n\n\n\n\nGetDomain\n\n\nThe GetDomain operation provides an interface to return all possible values for a given metadata property/queryable or parameter.\n\n\nExamples:\n\n\nHTTP GET:\n http://catalog.data.gov/csw?service=CSW\nversion=2.0.2\nrequest=GetDomain\npropertyname=dc:type\n\n\nhttp://catalog.data.gov/csw?service=CSW\nversion=2.0.2\nrequest=GetDomain\nparametername=GetRecords.outputSchema\n\n\nHTTP POST (XML):\n\n\n\n\nGetRecords\n\n\nThe GetRecords operation provides a query interface to search for data both using spatial predicates as well as attribute / temporal queries, or both. GetRecords queries are best invoked as HTTP POST (XML). Examples:\n\n\nNotes:\n\n\n\n\n\n\nAdjust the startPosition and maxRecords parameters to customize / page responses\n\n\n\n\n\n\nAdjust the optional outputSchema parameter to customize output format (default is Dublin Core [http://www.opengis.net/cat/csw/2.0.2], use http://www.isotc211.org/2005/gmd for ISO)\n\n\n\n\n\n\nBounding box queries and responses always use axis order latitude longitude\n\n\n\n\n\n\nAdjust the optional csw:ElementSetName parameter (brief, summary [default], full) to adjust verbosity of metadata record responses. The following table provides an overview of the elements returned:\n\n\n\n\n\n\nReturnable elements\n\n\n\n\nQuery all records, return records 1 - 15:\n\n\n\n\nQuery records with a bounding box:\n\n\n\n\nQuery records by attribute:\n\n\n\n\nQuery records by full text search:\n\n\n\n\nand part of the response:\n\n\n\n\nQuery records by combined bounding box and full text search:\n\n\n\n\nQuery the total number of records in the catalogue (HTTP GET):\n\n\nhttp://catalog.data.gov/csw?service=CSW\nversion=2.0.2\nrequest=GetRecords\ntypenames=csw:Record\nelementsetname=brief\n\n\nGetRecordById\n\n\nThe GetRecordById operation returns defailed information for specific metadata records.\n\n\nExamples:\n\n\nHTTP GET:\n\n\nhttp://catalog.data.gov/csw?service=CSW\nversion=2.0.2\nrequest=GetRecordById\nid=16bbf4f8-8e88-45c6-a76b-6af51b2b3555\nelementsetname=full\n\n\nHTTP GET (ISO 19139):\n\n\nhttp://catalog.data.gov/csw?service=CSW\nversion=2.0.2\nrequest=GetRecordById\nid=16bbf4f8-8e88-45c6-a76b-6af51b2b3555\nelementsetname=full\noutputSchema=http://www.isotc211.org/2005/gmd\n\n\nHTTP GET (ISO 19139 brief):\n\n\nhttp://catalog.data.gov/csw?service=CSW\nversion=2.0.2\nrequest=GetRecordById\nid=16bbf4f8-8e88-45c6-a76b-6af51b2b3555\nelementsetname=brief\noutputSchema=http://www.isotc211.org/2005/gmd\n\n\nHTTP POST (XML):\n\n\n\n\nSearching Collections\n\n\nThe Data.gov CSW supports searches within for collections. The following query searches for all records that are part of a collection via the \napiso:ParentIdentifier\n core queryable:\n\n\n\n\nOpenSearch Geo and Time Extensions\n\n\nThe Data.gov CSW endpoints support the OGC OpenSearch Geo and Time Extensions 1.0 standard. This provides a lightweight mechanism to query the catalogue via HTTP GET for simple spatial and temporal searches.\n\n\nTo query the Data.gov via OpenSearch, requests must be specificed with mode=opensearch. The following parameters are supported:\n\n\n\n\n{searchTerms}\n (keywords)\n\n\n{geo:box}\n (bounding box of minx,miny,maxx,maxy)\n\n\n{time:start}\n and \n{time:end}\n (temporal)\n\n\n\n\nSpecifying combinations of these parameters constitutes an exclusive search.\n\n\nExamples:\n\n\nAutodiscovery:\n\n\nhttp://catalog.data.gov/csw?mode=opensearch\nservice=CSW\nversion=2.0.2\nrequest=GetCapabilities\n\n\nKeywords:\n\n\nhttp://catalog.data.gov/csw?mode=opensearch\nservice=CSW\nversion=2.0.2\nrequest=GetRecords\nelementsetname=full\nresulttype=results\ntypenames=csw:Record\nq=idaho\n\n\nBounding Box:\n\n\nhttp://catalog.data.gov/csw?mode=opensearch\nservice=CSW\nversion=2.0.2\nrequest=GetRecords\nelementsetname=full\nresulttype=results\ntypenames=csw:Record\nbbox=-140,20,-40,40\n\n\nTemporal Extent (range):\n\n\nhttp://catalog.data.gov/csw?mode=opensearch\nservice=CSW\nversion=2.0.2\nrequest=GetRecords\nelementsetname=full\nresulttype=results\ntypenames=csw:Record\ntime=2001/2004\n\n\nTemporal Extent (since 2004):\n\n\nhttp://catalog.data.gov/csw?mode=opensearch\nservice=CSW\nversion=2.0.2\nrequest=GetRecords\nelementsetname=full\nresulttype=results\ntypenames=csw:Record\ntime=2004/\n\n\nTemporal Extent (before 2004):\n\n\nhttp://catalog.data.gov/csw?mode=opensearch\nservice=CSW\nversion=2.0.2\nrequest=GetRecords\nelementsetname=full\nresulttype=results\ntypenames=csw:Record\ntime=/2004\n\n\nTemporal Extent (2001/2007) and Keywords:\n\n\nhttp://catalog.data.gov/csw?mode=opensearch\nservice=CSW\nversion=2.0.2\nrequest=GetRecords\nelementsetname=full\nresulttype=results\ntypenames=csw:Record\ntime=2001/2007\nq=fauna\n\n\nTemporal Extent (2001/2007) and Bounding Box:\n\n\nhttp://catalog.data.gov/csw?mode=opensearch\nservice=CSW\nversion=2.0.2\nrequest=GetRecords\nelementsetname=full\nresulttype=results\ntypenames=csw:Record\ntime=2001/2007\nbbox=-140,20,-40,40\n\n\nKeywords and Bounding Box:\n\n\nhttp://catalog.data.gov/csw?mode=opensearch\nservice=CSW\nversion=2.0.2\nrequest=GetRecords\nelementsetname=full\nresulttype=results\ntypenames=csw:Record\nq=vegetation\nbbox=-140,20,-40,40", 
+            "title": "Catalogue Service"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#catalogue-service-for-the-web-csw", 
+            "text": "CSW (Catalogue Service for the Web) is an OGC (Open Geospatial Consortium) specification that defines common interfaces to discover, browse, and query metadata about data, services, and other potential resources.  Data.gov provides access to its catalog via the CSW standard for both first-order and all metadata for harvested data, services and applications. The first-order CSW endpoint provides collection level filtering of all metadata records. The all metadata CSW endpoint provides all levels of metadata at varying levels of granularity.  Any client supporting CSW (desktop, GIS, web application, client library, etc.) can integrate the Data.gov CSW endpoints.", 
+            "title": "Catalogue Service for the Web (CSW)"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#interacting-with-the-datagov-csw", 
+            "text": "The Data.gov CSW endpoints are implemented using pycsw. pycsw is an OGC CSW server implementation written in Python, enabling the publishing and discovery of data and services, providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is Certified OGC Compliant and is an OGC Reference Implementation.", 
+            "title": "Interacting with the Data.gov CSW"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#datagov-csw-endpoints", 
+            "text": "The Data.gov CSW endpoints support the OGC CSW 2.0.2 standard as well as the ISO Metadata Application 1.0.0 Profile. The CSW endpoints operate over HTTP GET, POST (XML) and SOAP.", 
+            "title": "Data.gov CSW endpoints"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#making-http-post-xml-requests", 
+            "text": "While making HTTP GET requests is relatively straightforward, HTTP POST (XML) requests require the client to open the connection and send the request XML as the payload. Below are a few examples on how to run HTTP POST (XML) requests on the command line:", 
+            "title": "Making HTTP POST (XML) requests"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#service-endpoints", 
+            "text": "First-order metadata: http://catalog.data.gov/csw  All metadata: http://catalog.data.gov/csw-all  We will use the first-order CSW endpoint for the examples below.", 
+            "title": "Service Endpoints"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#getcapabilities", 
+            "text": "The  GetCapabilities  operation provides CSW clients with service metadata about the CSW service as an XML document.  Examples:  HTTP GET:  http://catalog.data.gov/csw?service=CSW version=2.0.2 request=GetCapabilities  HTTP POST (XML):", 
+            "title": "GetCapabilities"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#describerecord", 
+            "text": "The DescribeRecord operation provides CSW clients with elements of supported information models of the CSW service.  Examples:  HTTP GET:  http://catalog.data.gov/csw?service=CSW version=2.0.2 request=DescribeRecord  HTTP POST (XML):", 
+            "title": "DescribeRecord"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#getdomain", 
+            "text": "The GetDomain operation provides an interface to return all possible values for a given metadata property/queryable or parameter.  Examples:  HTTP GET:  http://catalog.data.gov/csw?service=CSW version=2.0.2 request=GetDomain propertyname=dc:type  http://catalog.data.gov/csw?service=CSW version=2.0.2 request=GetDomain parametername=GetRecords.outputSchema  HTTP POST (XML):", 
+            "title": "GetDomain"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#getrecords", 
+            "text": "The GetRecords operation provides a query interface to search for data both using spatial predicates as well as attribute / temporal queries, or both. GetRecords queries are best invoked as HTTP POST (XML). Examples:  Notes:    Adjust the startPosition and maxRecords parameters to customize / page responses    Adjust the optional outputSchema parameter to customize output format (default is Dublin Core [http://www.opengis.net/cat/csw/2.0.2], use http://www.isotc211.org/2005/gmd for ISO)    Bounding box queries and responses always use axis order latitude longitude    Adjust the optional csw:ElementSetName parameter (brief, summary [default], full) to adjust verbosity of metadata record responses. The following table provides an overview of the elements returned:    Returnable elements", 
+            "title": "GetRecords"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#query-all-records-return-records-1-15", 
+            "text": "", 
+            "title": "Query all records, return records 1 - 15:"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#query-records-with-a-bounding-box", 
+            "text": "", 
+            "title": "Query records with a bounding box:"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#query-records-by-attribute", 
+            "text": "", 
+            "title": "Query records by attribute:"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#query-records-by-full-text-search", 
+            "text": "", 
+            "title": "Query records by full text search:"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#and-part-of-the-response", 
+            "text": "", 
+            "title": "and part of the response:"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#query-records-by-combined-bounding-box-and-full-text-search", 
+            "text": "", 
+            "title": "Query records by combined bounding box and full text search:"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#query-the-total-number-of-records-in-the-catalogue-http-get", 
+            "text": "http://catalog.data.gov/csw?service=CSW version=2.0.2 request=GetRecords typenames=csw:Record elementsetname=brief", 
+            "title": "Query the total number of records in the catalogue (HTTP GET):"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#getrecordbyid", 
+            "text": "The GetRecordById operation returns defailed information for specific metadata records.  Examples:  HTTP GET:  http://catalog.data.gov/csw?service=CSW version=2.0.2 request=GetRecordById id=16bbf4f8-8e88-45c6-a76b-6af51b2b3555 elementsetname=full  HTTP GET (ISO 19139):  http://catalog.data.gov/csw?service=CSW version=2.0.2 request=GetRecordById id=16bbf4f8-8e88-45c6-a76b-6af51b2b3555 elementsetname=full outputSchema=http://www.isotc211.org/2005/gmd  HTTP GET (ISO 19139 brief):  http://catalog.data.gov/csw?service=CSW version=2.0.2 request=GetRecordById id=16bbf4f8-8e88-45c6-a76b-6af51b2b3555 elementsetname=brief outputSchema=http://www.isotc211.org/2005/gmd  HTTP POST (XML):", 
+            "title": "GetRecordById"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#searching-collections", 
+            "text": "The Data.gov CSW supports searches within for collections. The following query searches for all records that are part of a collection via the  apiso:ParentIdentifier  core queryable:", 
+            "title": "Searching Collections"
+        }, 
+        {
+            "location": "/user-guide/csw/index.html#opensearch-geo-and-time-extensions", 
+            "text": "The Data.gov CSW endpoints support the OGC OpenSearch Geo and Time Extensions 1.0 standard. This provides a lightweight mechanism to query the catalogue via HTTP GET for simple spatial and temporal searches.  To query the Data.gov via OpenSearch, requests must be specificed with mode=opensearch. The following parameters are supported:   {searchTerms}  (keywords)  {geo:box}  (bounding box of minx,miny,maxx,maxy)  {time:start}  and  {time:end}  (temporal)   Specifying combinations of these parameters constitutes an exclusive search.  Examples:  Autodiscovery:  http://catalog.data.gov/csw?mode=opensearch service=CSW version=2.0.2 request=GetCapabilities  Keywords:  http://catalog.data.gov/csw?mode=opensearch service=CSW version=2.0.2 request=GetRecords elementsetname=full resulttype=results typenames=csw:Record q=idaho  Bounding Box:  http://catalog.data.gov/csw?mode=opensearch service=CSW version=2.0.2 request=GetRecords elementsetname=full resulttype=results typenames=csw:Record bbox=-140,20,-40,40  Temporal Extent (range):  http://catalog.data.gov/csw?mode=opensearch service=CSW version=2.0.2 request=GetRecords elementsetname=full resulttype=results typenames=csw:Record time=2001/2004  Temporal Extent (since 2004):  http://catalog.data.gov/csw?mode=opensearch service=CSW version=2.0.2 request=GetRecords elementsetname=full resulttype=results typenames=csw:Record time=2004/  Temporal Extent (before 2004):  http://catalog.data.gov/csw?mode=opensearch service=CSW version=2.0.2 request=GetRecords elementsetname=full resulttype=results typenames=csw:Record time=/2004  Temporal Extent (2001/2007) and Keywords:  http://catalog.data.gov/csw?mode=opensearch service=CSW version=2.0.2 request=GetRecords elementsetname=full resulttype=results typenames=csw:Record time=2001/2007 q=fauna  Temporal Extent (2001/2007) and Bounding Box:  http://catalog.data.gov/csw?mode=opensearch service=CSW version=2.0.2 request=GetRecords elementsetname=full resulttype=results typenames=csw:Record time=2001/2007 bbox=-140,20,-40,40  Keywords and Bounding Box:  http://catalog.data.gov/csw?mode=opensearch service=CSW version=2.0.2 request=GetRecords elementsetname=full resulttype=results typenames=csw:Record q=vegetation bbox=-140,20,-40,40", 
+            "title": "OpenSearch Geo and Time Extensions"
+        }, 
+        {
             "location": "/about/release/index.html", 
             "text": "Boundless Exchange v1.0.0 Release Notes\n\n\n29 July, 2016\n\n\nBoundless Exchange is a web-based platform for your content, built for your enterprise. It facilitates the creation, sharing, and collaborative use of geospatial data. For power users, advanced editing capabilities for versioned workflows via the web browser are included. Boundless Exchange is powered by \nGeoNode\n, \nGeoGig\n, \nOpenLayers\n, \nPostGIS\n, \nGeoServer\n and \npycsw\n.\n\n\nAdditions\n\n\n\n\nAdjusted Templates\n\n\nNew logos and color scheme\n\n\nUpload Document/Layer and Create Basemap on Main Page\n\n\nDefault CRS displays in remote services page\n\n\n\n\n\n\nCustom Skinning\n\n\nBanner Image\n\n\nHyperlink Color\n\n\nIcon Image\n\n\nLogo Image\n\n\nNavigation Bar Color\n\n\nSite Name\n\n\nTag Line\n\n\n\n\n\n\nRegistry (HHypermap) integration\n\n\nRegistry layer display in MapLoom\n\n\npycsw transaction support\n\n\nSupport to store configuration in the environment via variables (Twelve Factor App)\n\n\nCustom thumbnails for layers and maps\n\n\nS3 Storage support for static and media files\n\n\nAdditional Base Map support\n\n\nMapBox\n (Requires Access Token)\n\n\nCarto\n\n\nStamen\n\n\nThunderforest\n\n\nAlternate OpenStreetMap versions\n\n\n\n\n\n\nLDAP Support\n\n\nWebGate authentication module\n\n\n\n\nDependencies\n\n\n\n\nPython 2.7.11\n\n\nJava 1.8.0\n\n\nGDAL 2.1.0\n\n\nGEOS 3.5.0\n\n\nPROJ 4.8.0\n\n\nGeoServer 2.9\n\n\nGeoNode Extension\n\n\nGeoGig Extension\n\n\nElasticSearch 1.7.5\n\n\nRabbitMQ Server 3.6.1\n\n\nPostgreSQL 9.5.3\n\n\nPostGIS 2.2.2\n\n\n\n\nRemovals\n\n\n\n\nNone at this time\n\n\n\n\nChanges\n\n\n\n\nNone at this time\n\n\n\n\nFixes\n\n\n\n\nNone at this time\n\n\n\n\nPlatform Support\n\n\n\n\nCentOS/RHEL 6\n\n\nCentOS/RHEL 7\n\n\n\n\nKnown Issues\n\n\n\n\nNone at this time", 
             "title": "Release Notes"
