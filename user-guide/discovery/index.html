@@ -169,7 +169,7 @@
         
             <li><a href="#harvesting">Harvesting</a></li>
         
-            <li><a href="#transactions_1">Transactions</a></li>
+            <li><a href="#transaction-operations">Transaction Operations</a></li>
         
     
     </ul>
@@ -346,7 +346,7 @@ http://exchange-dev.boundlessps.com/registry/search/csw?service=CSW&amp;version=
 <p><strong>Keywords and Bounding Box:</strong></p>
 <p>http://exchange-dev.boundlessps.com/registry/search/csw?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;resulttype=results&amp;typenames=csw:Record&amp;q=vegetation&amp;bbox=-140,20,-40,40</p>
 <h3 id="transactions">Transactions</h3>
-<p>Resgisrty's CSW service, powered by pycsw, has the ability to process CSW Harvest and Transaction requests (CSW-T).</p>
+<p>Registry's CSW service, powered by pycsw, has the ability to process CSW Harvest and Transaction requests (CSW-T).</p>
 <h3 id="supported-resource-types">Supported Resource types</h3>
 <p>For transactions and harvesting, pycsw supports the following metadata resource types by default:</p>
 <p><img alt="resource-types" src="../img/csw/resource-types.png" /></p>
@@ -357,7 +357,7 @@ http://exchange-dev.boundlessps.com/registry/search/csw?service=CSW&amp;version=
 OGC Web Services</p>
 <p>When harvesting OGC web services, requests can provide the base URL of the service as part of the Harvest request. pycsw will construct a <em>GetCapabilities</em> request dynamically.</p>
 <p>When harvesting other CSW servers, pycsw pages through the entire CSW in default increments of 10. This value can be modified via the <em>manager.csw_harvest_pagesize</em> configuration option. It is strongly advised to use the <em>csw:ResponseHandler</em> parameter for harvesting large CSW catalogues to prevent HTTP timeouts.</p>
-<h3 id="transactions_1">Transactions</h3>
+<h3 id="transaction-operations">Transaction Operations</h3>
 <p>pycsw supports 3 modes of the Transaction operation (Insert, Update, Delete):</p>
 <ul>
 <li><strong>Insert:</strong> full XML documents can be inserted as per CSW-T</li>
