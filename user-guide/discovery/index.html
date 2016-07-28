@@ -89,10 +89,6 @@
                             <a href="../registry/index.html">Registry Layers</a>
                         </li>
                     
-                        <li >
-                            <a href="../csw/index.html">Catalogue Service</a>
-                        </li>
-                    
                     </ul>
                 </li>
             
@@ -143,7 +139,37 @@
         
             <li><a href="#local-content">Local Content</a></li>
         
-            <li><a href="#search-by-csw">Search by CSW</a></li>
+            <li><a href="#registry-catalogue-service-for-the-web-csw">Registry Catalogue Service for the Web (CSW)</a></li>
+        
+            <li><a href="#interacting-with-the-registry-csw">Interacting with the Registry CSW</a></li>
+        
+            <li><a href="#registry-csw-endpoints">Registry CSW endpoints</a></li>
+        
+            <li><a href="#making-http-post-xml-requests">Making HTTP POST (XML) requests</a></li>
+        
+            <li><a href="#service-endpoints">Service Endpoints</a></li>
+        
+            <li><a href="#getcapabilities">GetCapabilities</a></li>
+        
+            <li><a href="#describerecord">DescribeRecord</a></li>
+        
+            <li><a href="#getdomain">GetDomain</a></li>
+        
+            <li><a href="#getrecords">GetRecords</a></li>
+        
+            <li><a href="#getrecordbyid">GetRecordById</a></li>
+        
+            <li><a href="#searching-collections">Searching Collections</a></li>
+        
+            <li><a href="#opensearch-geo-and-time-extensions">OpenSearch Geo and Time Extensions</a></li>
+        
+            <li><a href="#transactions">Transactions</a></li>
+        
+            <li><a href="#supported-resource-types">Supported Resource types</a></li>
+        
+            <li><a href="#harvesting">Harvesting</a></li>
+        
+            <li><a href="#transactions_1">Transactions</a></li>
         
     
     </ul>
@@ -210,11 +236,136 @@
 </ul>
 </li>
 </ol>
-<h3 id="search-by-csw">Search by CSW</h3>
-<hr />
+<h3 id="registry-catalogue-service-for-the-web-csw">Registry Catalogue Service for the Web (CSW)</h3>
+<p>CSW (Catalogue Service for the Web) is an OGC (Open Geospatial Consortium) specification that defines common interfaces to discover, browse, and query metadata about data, services, and other potential resources.</p>
+<p>Registry provides access to its catalog via the CSW standard for both first-order and all metadata for harvested data, services and applications. The first-order CSW endpoint provides collection level filtering of all metadata records. The all metadata CSW endpoint provides all levels of metadata at varying levels of granularity.</p>
+<p>Any client supporting CSW (desktop, GIS, web application, client library, etc.) can integrate the Registry CSW endpoints.</p>
+<h3 id="interacting-with-the-registry-csw">Interacting with the Registry CSW</h3>
+<p>The Registry CSW endpoints are implemented using pycsw. pycsw is an OGC CSW server implementation written in Python, enabling the publishing and discovery of data and services, providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is Certified OGC Compliant and is an OGC Reference Implementation.</p>
+<h3 id="registry-csw-endpoints">Registry CSW endpoints</h3>
+<p>The Registry CSW endpoints support the OGC CSW 2.0.2 standard as well as the ISO Metadata Application 1.0.0 Profile. The CSW endpoints operate over HTTP GET, POST (XML) and SOAP.</p>
+<h3 id="making-http-post-xml-requests">Making HTTP POST (XML) requests</h3>
+<p>While making HTTP GET requests is relatively straightforward, HTTP POST (XML) requests require the client to open the connection and send the request XML as the payload. Below are a few examples on how to run HTTP POST (XML) requests on the command line:</p>
+<p><img alt="http-post-xml" src="../img/csw/http-post-xml.png" /></p>
+<h3 id="service-endpoints">Service Endpoints</h3>
+<p>First-order metadata: http://exchange-dev.boundlessps.com/registry/search</p>
+<p>We will use the first-order CSW endpoint for the examples below.</p>
+<h3 id="getcapabilities">GetCapabilities</h3>
+<p>The <strong>GetCapabilities</strong> operation provides CSW clients with service metadata about the CSW service as an XML document.</p>
+<p><strong>Examples:</strong></p>
+<p><strong>HTTP GET:</strong> http://exchange-dev.boundlessps.com/registry/search/csw?service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</p>
+<p><strong>HTTP POST (XML):</strong></p>
+<p><img alt="http-post-example" src="../img/csw/http-post-example.png" /></p>
+<h3 id="describerecord">DescribeRecord</h3>
+<p>The DescribeRecord operation provides CSW clients with elements of supported information models of the CSW service.</p>
+<p><strong>Examples:</strong></p>
+<p><strong>HTTP GET:</strong>
+http://exchange-dev.boundlessps.com/registry/search/csw?service=CSW&amp;version=2.0.2&amp;request=DescribeRecord</p>
+<p><strong>HTTP POST (XML):</strong></p>
+<p><img alt="describe-record" src="../img/csw/describe-record.png" /></p>
+<h3 id="getdomain">GetDomain</h3>
+<p>The GetDomain operation provides an interface to return all possible values for a given metadata property/queryable or parameter.</p>
+<p><strong>Examples:</strong></p>
+<p><strong>HTTP GET:</strong> http://exchange-dev.boundlessps.com/registry/search/csw?service=CSW&amp;version=2.0.2&amp;request=GetDomain&amp;propertyname=dc:type</p>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?service=CSW&amp;version=2.0.2&amp;request=GetDomain&amp;parametername=GetRecords.outputSchema</p>
+<p><strong>HTTP POST (XML):</strong></p>
+<p><img alt="get-domain" src="../img/csw/get-domain.png" /></p>
+<h3 id="getrecords">GetRecords</h3>
+<p>The GetRecords operation provides a query interface to search for data both using spatial predicates as well as attribute / temporal queries, or both. GetRecords queries are best invoked as HTTP POST (XML). Examples:</p>
+<p>Notes:</p>
 <ul>
-<li>TODO</li>
-</ul></div>
+<li>
+<p>Adjust the startPosition and maxRecords parameters to customize / page responses</p>
+</li>
+<li>
+<p>Adjust the optional outputSchema parameter to customize output format (default is Dublin Core [http://www.opengis.net/cat/csw/2.0.2], use http://www.isotc211.org/2005/gmd for ISO)</p>
+</li>
+<li>
+<p>Bounding box queries and responses always use axis order latitude longitude</p>
+</li>
+<li>
+<p>Adjust the optional csw:ElementSetName parameter (brief, summary [default], full) to adjust verbosity of metadata record responses. The following table provides an overview of the elements returned:</p>
+</li>
+</ul>
+<p>Returnable elements</p>
+<p><img alt="returnable-elements" src="../img/csw/returnable-elements.png" /></p>
+<h4 id="query-all-records-return-records-1-15">Query all records, return records 1 - 15:</h4>
+<p><img alt="query-all-records" src="../img/csw/query-all-records.png" /></p>
+<h4 id="query-records-with-a-bounding-box">Query records with a bounding box:</h4>
+<p><img alt="query-bounding-box" src="../img/csw/query-bounding-box.png" /></p>
+<h4 id="query-records-by-attribute">Query records by attribute:</h4>
+<p><img alt="query-by-attribute" src="../img/csw/query-by-attribute.png" /></p>
+<h4 id="query-records-by-full-text-search">Query records by full text search:</h4>
+<p><img alt="full-text-search" src="../img/csw/full-text-search.png" /></p>
+<h4 id="and-part-of-the-response">and part of the response:</h4>
+<p><img alt="full-text-response" src="../img/csw/full-text-response.png" /></p>
+<h4 id="query-records-by-combined-bounding-box-and-full-text-search">Query records by combined bounding box and full text search:</h4>
+<p><img alt="bounding-and-text" src="../img/csw/bounding-and-text.png" /></p>
+<h4 id="query-the-total-number-of-records-in-the-catalogue-http-get">Query the total number of records in the catalogue (HTTP GET):</h4>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;typenames=csw:Record&amp;elementsetname=brief</p>
+<h3 id="getrecordbyid">GetRecordById</h3>
+<p>The GetRecordById operation returns defailed information for specific metadata records.</p>
+<p><strong>Examples:</strong></p>
+<p><strong>HTTP GET:</strong></p>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;id=16bbf4f8-8e88-45c6-a76b-6af51b2b3555&amp;elementsetname=full</p>
+<p><strong>HTTP GET (ISO 19139):</strong></p>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;id=16bbf4f8-8e88-45c6-a76b-6af51b2b3555&amp;elementsetname=full&amp;outputSchema=http://www.isotc211.org/2005/gmd</p>
+<p><strong>HTTP GET (ISO 19139 brief):</strong></p>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;id=16bbf4f8-8e88-45c6-a76b-6af51b2b3555&amp;elementsetname=brief&amp;outputSchema=http://www.isotc211.org/2005/gmd</p>
+<p><strong>HTTP POST (XML):</strong></p>
+<p><img alt="record-byld-post-xml" src="../img/csw/record-byld-post-xml.png" /></p>
+<h3 id="searching-collections">Searching Collections</h3>
+<p>The Registry CSW supports searches within for collections. The following query searches for all records that are part of a collection via the <strong>apiso:ParentIdentifier</strong> core queryable:</p>
+<p><img alt="search-collections" src="../img/csw/search-collections.png" /></p>
+<h3 id="opensearch-geo-and-time-extensions">OpenSearch Geo and Time Extensions</h3>
+<p>The Registry CSW endpoints support the OGC OpenSearch Geo and Time Extensions 1.0 standard. This provides a lightweight mechanism to query the catalogue via HTTP GET for simple spatial and temporal searches.</p>
+<p>To query the Registry via OpenSearch, requests must be specificed with mode=opensearch. The following parameters are supported:</p>
+<ul>
+<li><strong>{searchTerms}</strong> (keywords)</li>
+<li><strong>{geo:box}</strong> (bounding box of minx,miny,maxx,maxy)</li>
+<li><strong>{time:start}</strong> and <strong>{time:end}</strong> (temporal)</li>
+</ul>
+<p>Specifying combinations of these parameters constitutes an exclusive search.</p>
+<p><strong>Examples:</strong></p>
+<p><strong>Autodiscovery:</strong></p>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</p>
+<p><strong>Keywords:</strong></p>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;resulttype=results&amp;typenames=csw:Record&amp;q=idaho</p>
+<p><strong>Bounding Box:</strong></p>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;resulttype=results&amp;typenames=csw:Record&amp;bbox=-140,20,-40,40</p>
+<p><strong>Temporal Extent (range):</strong></p>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;resulttype=results&amp;typenames=csw:Record&amp;time=2001/2004</p>
+<p><strong>Temporal Extent (since 2004):</strong></p>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;resulttype=results&amp;typenames=csw:Record&amp;time=2004/</p>
+<p><strong>Temporal Extent (before 2004):</strong></p>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;resulttype=results&amp;typenames=csw:Record&amp;time=/2004</p>
+<p><strong>Temporal Extent (2001/2007) and Keywords:</strong></p>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;resulttype=results&amp;typenames=csw:Record&amp;time=2001/2007&amp;q=fauna</p>
+<p><strong>Temporal Extent (2001/2007) and Bounding Box:</strong></p>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;resulttype=results&amp;typenames=csw:Record&amp;time=2001/2007&amp;bbox=-140,20,-40,40</p>
+<p><strong>Keywords and Bounding Box:</strong></p>
+<p>http://exchange-dev.boundlessps.com/registry/search/csw?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;resulttype=results&amp;typenames=csw:Record&amp;q=vegetation&amp;bbox=-140,20,-40,40</p>
+<h3 id="transactions">Transactions</h3>
+<p>Resgisrty's CSW service, powered by pycsw, has the ability to process CSW Harvest and Transaction requests (CSW-T).</p>
+<h3 id="supported-resource-types">Supported Resource types</h3>
+<p>For transactions and harvesting, pycsw supports the following metadata resource types by default:</p>
+<p><img alt="resource-types" src="../img/csw/resource-types.png" /></p>
+<h3 id="harvesting">Harvesting</h3>
+<p><strong>Note:</strong> Your server must be able to make outgoing HTTP requests for this functionality.</p>
+<p>pycsw supports the CSW-T Harvest operation. Records which are harvested require to setup a cronjob to periodically refresh records in the local repository. A sample cronjob is available in <em>etc/harvest-all.cron</em> which points to <em>pycsw-admin.py</em> (you must specify the correct path to your configuration). Harvest operation results can be sent by email (via <em>mailto:</em>) or ftp (via <em>ftp://</em>) if the Harvest request specifies <em>csw:ResponseHandler</em>.</p>
+<p><strong>Note:</strong> For <em>csw:ResponseHandler</em> values using the mailto: protocol, you must have server.smtp_host set in your configuration.
+OGC Web Services</p>
+<p>When harvesting OGC web services, requests can provide the base URL of the service as part of the Harvest request. pycsw will construct a <em>GetCapabilities</em> request dynamically.</p>
+<p>When harvesting other CSW servers, pycsw pages through the entire CSW in default increments of 10. This value can be modified via the <em>manager.csw_harvest_pagesize</em> configuration option. It is strongly advised to use the <em>csw:ResponseHandler</em> parameter for harvesting large CSW catalogues to prevent HTTP timeouts.</p>
+<h3 id="transactions_1">Transactions</h3>
+<p>pycsw supports 3 modes of the Transaction operation (Insert, Update, Delete):</p>
+<ul>
+<li><strong>Insert:</strong> full XML documents can be inserted as per CSW-T</li>
+<li><strong>Update:</strong> updates can be made as full record updates or record properties against a <em>csw:Constraint</em></li>
+<li><strong>Delete:</strong> deletes can be made against a <em>csw:Constraint</em></li>
+</ul>
+<p>Transaction operation results can be sent by email (via <em>mailto:</em>) or ftp (via <em>ftp://</em>) if the Transaction request specifies <em>csw:ResponseHandler</em>.</p>
+<p>The Tester contain CSW-T request examples.</p></div>
             
         </div>
 
